@@ -1,0 +1,116 @@
+.body {
+    background-color: black;
+}
+
+.botones {
+    display: flex;
+}
+
+#btnAtaque1 {
+    display: none;
+    background-color: rgb(72, 72, 72);
+    color: rgb(0, 0, 0);
+    border-radius: 10px;
+    margin: 0.2em;
+}
+
+#btnAtaque2 {
+    display: none;
+    background-color: rgb(72, 72, 72);
+    color: rgb(0, 0, 0);
+    border-radius: 10px;
+    margin: 0.2em;
+}
+
+#btnAtaque3 {
+    display: none;
+    background-color: rgb(72, 72, 72);
+    color: rgb(0, 0, 0);
+    border-radius: 10px;
+    margin: 0.2em;
+}
+
+#btnComenzar {
+    display: none;
+    background-color: rgb(91, 66, 66);
+    border-radius: 8px;
+}
+
+.btnPj {
+    background-color: darkgrey;
+    border-radius: 8px;
+    margin: 0.2em;
+}
+
+#btnPocima {
+    display: none;
+    background-color: rgb(72, 72, 72);
+    color: rgb(0, 0, 0);
+    border-radius: 10px;
+    margin: 0.2em;
+}
+#btnSeleccionarEnemigo{
+    display: none;
+    background-color: rgb(72, 72, 72);
+    color: rgb(0, 0, 0);
+    border-radius: 10px;
+    margin: 0.2em;
+}
+
+#btnTurnoEnemigo {
+    display: none;
+    background-color: rgb(72, 72, 72);
+    color: rgb(0, 0, 0);
+    border-radius: 10px;
+    margin: 0.2em;
+}
+
+.consola {
+    margin: auto;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-evenly;
+    align-items: center;
+    max-height: 100em;
+    z-index: -1;
+}
+
+.div {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: space-around;
+    align-items: center;
+    margin-top: 50px;
+}
+
+.divImg {
+    display: flex;
+    align-items: center;
+    flex-direction: column-reverse;
+    justify-content: space-evenly;
+}
+
+.divTexto {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: aliceblue;
+}
+
+.img1 {
+    margin: auto;
+    max-height: 140px;
+    position: absolute;
+    z-index: 1;
+}
+
+.parrafo {
+    color: antiquewhite;
+    font-size: larger;
+}
+
+#personajes {
+    display: flex;
+    margin: 1em;
+}
