@@ -1,11 +1,9 @@
 // CONSTRUCTORES DEL JUEGO
 class Personaje {
-    constructor(tipo, vida, ataques, objetos, inventario) {
+    constructor(tipo, vida, ataques) {
         this.tipo = tipo;
         this.vida = vida;
         this.ataques = ataques;
-        this.objetos = objetos;
-        this.inventario = inventario;
     }
 }
 
@@ -17,13 +15,13 @@ class AtaquePj {
     }
 }
 
-class ObjetoPj {
+/* class ObjetoPj {
     constructor(nombre, vida, daño) {
         this.nombre = nombre;
         this.vida = vida;
         this.daño = daño;
     }
-}
+} */
 
 class Monstruos {
     constructor(tipo, vida, daño) {
@@ -41,15 +39,15 @@ const ataqueMago3 = new AtaquePj(3, "Rayo de escarcha", 20);
 
 const ataqueMago = [ataqueMago1, ataqueMago2, ataqueMago3];
 
-const objetoMago1 = new ObjetoPj("baston", 0, 30);
+/* const objetoMago1 = new ObjetoPj("baston", 0, 30);
 const objetoMago2 = new ObjetoPj("capa", 50, 0);
 const objetoMago3 = new ObjetoPj("gorro", 20, 10);
 
 const objMago = [objetoMago1, objetoMago2, objetoMago3];
 
-const inventarioMago = [];
+const inventarioMago = []; */
 
-const mago = new Personaje("Mago", 100, ataqueMago, objMago, inventarioMago);
+const mago = new Personaje("Mago", 100, ataqueMago);
 
 //=====================================================================================================
 //GUERRERO
@@ -59,15 +57,15 @@ const ataqueGuerrero3 = new AtaquePj(3, "Estallido de filos", 20);
 
 const ataqueGuerrero = [ataqueGuerrero1, ataqueGuerrero2, ataqueGuerrero3];
 
-const objetoGuerrero1 = new ObjetoPj("espada", 0, 30);
+/* const objetoGuerrero1 = new ObjetoPj("espada", 0, 30);
 const objetoGuerrero2 = new ObjetoPj("armadura", 50, 0);
 const objetoGuerrero3 = new ObjetoPj("guantes", 20, 10);
 
 const objGuerrero = [objetoGuerrero1, objetoGuerrero2, objetoGuerrero3];
 
-const inventarioGuerrero = [];
+const inventarioGuerrero = []; */
 
-const guerrero = new Personaje("Guerrero", 100, ataqueGuerrero, objGuerrero, inventarioGuerrero);
+const guerrero = new Personaje("Guerrero", 100, ataqueGuerrero);
 
 //=====================================================================================================
 //ARQUERA
@@ -76,7 +74,7 @@ const ataqueArquera2 = new AtaquePj(2, "Disparo de halcon", 25);
 const ataqueArquera3 = new AtaquePj(3, "Flecha de fuego", 20);
 
 const ataqueArquera = [ataqueArquera1, ataqueArquera2, ataqueArquera3];
-
+/* 
 const objetoArquera1 = new ObjetoPj("arco", 0, 30);
 const objetoArquera2 = new ObjetoPj("pechera", 50, 0);
 const objetoArquera3 = new ObjetoPj("flecha", 20, 10);
@@ -84,8 +82,8 @@ const objetoArquera3 = new ObjetoPj("flecha", 20, 10);
 const objArquera = [objetoArquera1, objetoArquera2, objetoArquera3];
 
 const inventarioArquera = [];
-
-const arquera = new Personaje("Arquera", 100, ataqueArquera, objArquera, inventarioArquera);
+ */
+const arquera = new Personaje("Arquera", 100, ataqueArquera);
 
 //=====================================================================================================
 //MONSTRUO
@@ -118,7 +116,7 @@ function esconderBotonPersonajes() {
     document.getElementById('btnSeleccionarEnemigo').style.display = 'block';
 }
 
-function esconderBotonSelecEnemigo(){
+function esconderBotonSelecEnemigo() {
     selecEnemigo();
     document.getElementById('btnSeleccionarEnemigo').style.display = 'none';
     document.getElementById('btnComenzar').style.display = 'block';
@@ -153,7 +151,7 @@ function esconderBotonTurnoEnemigo() {
     document.getElementById('btnTurnoEnemigo').style.display = 'none';
 }
 
-function selecEnemigo(){
+function selecEnemigo() {
     let enemigo = monstruosArray[0];
     console.table(enemigo);
     console.log(enemigo.vida);
@@ -194,15 +192,10 @@ function dropObjetosArray() {
 
 function enemigoTurno() {
     if (monstruosArray.length > 0) {
-        enemigo = monstruosArray[0];
-        if (enemigo.vida < 0 || enemigo.vida == 0) {
-            /*             let objeto = dropObjetosArray(seleccionPersonaje);
-                        seleccionPersonaje.inventario.push(objeto);
-                        const last = seleccionPersonaje.inventario[seleccionPersonaje.inventario.length - 1];
-                        console.log(last);
-                        seleccionPersonaje.vida += last.vida;
-                        seleccionPersonaje.daño += last.daño;
-                        console.table(seleccionPersonaje);  */
+        if (enemigo.vida <= 0) {
+            seleccionPersonaje.vida += 60;
+            seleccionPersonaje.daño += 20;
+            console.table(seleccionPersonaje);
             monstruosArray.shift();
             console.table(enemigo);
         } else if (enemigo.vida > 0 && enemigo.vida < 16) {
@@ -234,7 +227,7 @@ function ataque01() {
         console.log("Ataque crítico");
         enemigo.vida -= ataque1.daño * 1.5;
     } else {
-        enemigo.vida = enemigo.vida - ataque1.daño;
+        enemigo.vida -= ataque1.daño;
     }
     console.table(enemigo);
     esconderBotonAtaques();
