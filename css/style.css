@@ -49,7 +49,8 @@
     border-radius: 10px;
     margin: 0.2em;
 }
-#btnSeleccionarEnemigo{
+
+#btnSeleccionarEnemigo {
     display: none;
     background-color: rgb(72, 72, 72);
     color: rgb(0, 0, 0);
@@ -103,6 +104,21 @@
     max-height: 140px;
     position: absolute;
     z-index: 1;
+}
+
+.indicadoresVida {
+    display: flex;
+    color: bisque;
+}
+
+.lifePj {
+    margin-top: 5em;
+    margin-right: 5em;
+}
+
+.lifeMonster {
+    margin-top: 5em;
+    margin-left: 5em;
 }
 
 .parrafo {

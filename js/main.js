@@ -15,14 +15,6 @@ class AtaquePj {
     }
 }
 
-/* class ObjetoPj {
-    constructor(nombre, vida, daño) {
-        this.nombre = nombre;
-        this.vida = vida;
-        this.daño = daño;
-    }
-} */
-
 class Monstruos {
     constructor(tipo, vida, daño) {
         this.tipo = tipo;
@@ -39,14 +31,6 @@ const ataqueMago3 = new AtaquePj(3, "Rayo de escarcha", 20);
 
 const ataqueMago = [ataqueMago1, ataqueMago2, ataqueMago3];
 
-/* const objetoMago1 = new ObjetoPj("baston", 0, 30);
-const objetoMago2 = new ObjetoPj("capa", 50, 0);
-const objetoMago3 = new ObjetoPj("gorro", 20, 10);
-
-const objMago = [objetoMago1, objetoMago2, objetoMago3];
-
-const inventarioMago = []; */
-
 const mago = new Personaje("Mago", 100, ataqueMago);
 
 //=====================================================================================================
@@ -57,14 +41,6 @@ const ataqueGuerrero3 = new AtaquePj(3, "Estallido de filos", 20);
 
 const ataqueGuerrero = [ataqueGuerrero1, ataqueGuerrero2, ataqueGuerrero3];
 
-/* const objetoGuerrero1 = new ObjetoPj("espada", 0, 30);
-const objetoGuerrero2 = new ObjetoPj("armadura", 50, 0);
-const objetoGuerrero3 = new ObjetoPj("guantes", 20, 10);
-
-const objGuerrero = [objetoGuerrero1, objetoGuerrero2, objetoGuerrero3];
-
-const inventarioGuerrero = []; */
-
 const guerrero = new Personaje("Guerrero", 100, ataqueGuerrero);
 
 //=====================================================================================================
@@ -74,25 +50,17 @@ const ataqueArquera2 = new AtaquePj(2, "Disparo de halcon", 25);
 const ataqueArquera3 = new AtaquePj(3, "Flecha de fuego", 20);
 
 const ataqueArquera = [ataqueArquera1, ataqueArquera2, ataqueArquera3];
-/* 
-const objetoArquera1 = new ObjetoPj("arco", 0, 30);
-const objetoArquera2 = new ObjetoPj("pechera", 50, 0);
-const objetoArquera3 = new ObjetoPj("flecha", 20, 10);
 
-const objArquera = [objetoArquera1, objetoArquera2, objetoArquera3];
-
-const inventarioArquera = [];
- */
 const arquera = new Personaje("Arquera", 100, ataqueArquera);
 
 //=====================================================================================================
 //MONSTRUO
 
-const espiritu = new Monstruos("Espiritu", 40, 15);
-const huargo = new Monstruos("Huargo", 60, 20);
-const orco = new Monstruos("Orco", 70, 30);
-const troll = new Monstruos("Troll", 90, 40);
-const balrog = new Monstruos("Balrog", 120, 55);
+const espiritu = new Monstruos("Espiritu", 40, 5);
+const huargo = new Monstruos("Huargo", 60, 15);
+const orco = new Monstruos("Orco", 70, 20);
+const troll = new Monstruos("Troll", 90, 25);
+const balrog = new Monstruos("Balrog", 120, 35);
 
 
 const monstruosArray = [espiritu, huargo, orco, troll, balrog];
@@ -100,7 +68,6 @@ const monstruosArray = [espiritu, huargo, orco, troll, balrog];
 //=====================================================================================================
 //VARIABLES Y CONSTANTES
 let enemigo;
-let objeto;
 let indicador;
 let critico;
 let pjJSON;
@@ -118,6 +85,7 @@ function esconderBotonPersonajes() {
 
 function esconderBotonSelecEnemigo() {
     selecEnemigo();
+    vidaMonstruo.innerText = `${enemigo.tipo} vida ${enemigo.vida}`;
     document.getElementById('btnSeleccionarEnemigo').style.display = 'none';
     document.getElementById('btnComenzar').style.display = 'block';
     let divCajaTexto = document.getElementById('divTexto');
@@ -128,6 +96,7 @@ Cientos de años pasaron y una gran amenaza se fue haciendo más fuerte en el co
 
 function esconderBotonComenzar() {
     document.getElementById('btnComenzar').style.display = 'none';
+    vidaPj.innerText = `${seleccionPersonaje.tipo} vida ${seleccionPersonaje.vida}`;
     document.getElementById('divTexto').style.display = 'none';
     document.getElementById('btnAtaque1').style.display = 'block';
     document.getElementById('btnAtaque2').style.display = 'block';
@@ -140,7 +109,6 @@ function esconderBotonAtaques() {
     document.getElementById('btnAtaque2').style.display = 'none';
     document.getElementById('btnAtaque3').style.display = 'none';
     document.getElementById('btnPocima').style.display = 'none';
-    document.getElementById('btnTurnoEnemigo').style.display = 'block';
 }
 
 function esconderBotonTurnoEnemigo() {
@@ -152,9 +120,7 @@ function esconderBotonTurnoEnemigo() {
 }
 
 function selecEnemigo() {
-    let enemigo = monstruosArray[0];
-    console.table(enemigo);
-    console.log(enemigo.vida);
+    enemigo = monstruosArray[0];
     return enemigo;
 }
 
@@ -162,7 +128,6 @@ function selecMago() {
     seleccionPersonaje = mago;
     let pjJSON = JSON.stringify(mago);
     localStorage.setItem("Personaje seleccionado", pjJSON);
-    console.table(mago);
     esconderBotonPersonajes();
     return seleccionPersonaje;
 }
@@ -171,7 +136,6 @@ function selecGuerrero() {
     seleccionPersonaje = guerrero;
     let pjJSON = JSON.stringify(guerrero);
     localStorage.setItem("Personaje seleccionado", pjJSON);
-    console.table(guerrero);
     esconderBotonPersonajes();
     return seleccionPersonaje;
 }
@@ -180,89 +144,108 @@ function selecArquera() {
     seleccionPersonaje = arquera;
     let pjJSON = JSON.stringify(arquera);
     localStorage.setItem("Personaje seleccionado", pjJSON);
-    console.table(arquera);
     esconderBotonPersonajes();
     return seleccionPersonaje;
-}
-
-function dropObjetosArray() {
-    seleccionPersonaje.objetos[Math.floor(Math.random() * seleccionPersonaje.objetos.length)];
-    return seleccionPersonaje.objetos;
 }
 
 function enemigoTurno() {
     if (monstruosArray.length > 0) {
         if (enemigo.vida <= 0) {
-            seleccionPersonaje.vida += 60;
-            seleccionPersonaje.daño += 20;
-            console.table(seleccionPersonaje);
+            seleccionPersonaje.vida += 25;
             monstruosArray.shift();
-            console.table(enemigo);
+            esconderBotonAtaques();
+            document.getElementById('btnTurnoEnemigo').style.display = 'none';
+            document.getElementById('btnSeleccionarEnemigo').style.display = 'block';
         } else if (enemigo.vida > 0 && enemigo.vida < 16) {
             enemigo.vida += 15;
-            console.table(enemigo);
+            vidaMonstruo.innerText = `${enemigo.tipo} vida ${enemigo.vida}`;
+            vidaPj.innerText = `${seleccionPersonaje.tipo} vida ${seleccionPersonaje.vida}`;
+            esconderBotonTurnoEnemigo();
         } else {
             seleccionPersonaje.vida -= enemigo.daño;
-            console.table(seleccionPersonaje);
+            vidaMonstruo.innerText = `${enemigo.tipo} vida ${enemigo.vida}`;
+            vidaPj.innerText = `${seleccionPersonaje.tipo} vida ${seleccionPersonaje.vida}`;
+            esconderBotonTurnoEnemigo();
         }
     } else {
-        console.log("GANASTE");
+        let divCajaTexto = document.getElementById('divTexto');
+        divCajaTexto.innerText = `Felicitaciones joven ${seleccionPersonaje}!, has logrado recuperar la daga. Con ella y la ayuda de los dragones lograremos traer la paz a nuestro pueblo. FELICITACIONES, HAS GANADO! `;
+        esconderBotonAtaques();
     }
-    esconderBotonTurnoEnemigo();
 }
 
 function pocima() {
     seleccionPersonaje.vida += 25;
-    console.table(seleccionPersonaje);
+    vidaMonstruo.innerText = `${enemigo.tipo} vida ${enemigo.vida}`;
+    vidaPj.innerText = `${seleccionPersonaje.tipo} vida ${seleccionPersonaje.vida}`;
     esconderBotonAtaques();
+    document.getElementById('btnTurnoEnemigo').style.display = 'block';
     return seleccionPersonaje.vida;
 }
 
 function ataque01() {
-    let ataque1 = seleccionPersonaje.ataques[0];
-    console.log(ataque1);
-    let indicador = Math.floor(Math.random() * 4) + 1;
-    console.log(indicador);
-    if (indicador == 4) {
-        console.log("Ataque crítico");
-        enemigo.vida -= ataque1.daño * 1.5;
+    if (seleccionPersonaje.vida <= 0) {
+        esconderBotonAtaques();
+        let divCajaTexto = document.getElementById('divTexto');
+        divCajaTexto.innerText = `Joven ${seleccionPersonaje} tu camino ha llegado al fin, la muerte se ha echo una contigo.`;
     } else {
-        enemigo.vida -= ataque1.daño;
+        let ataque = seleccionPersonaje.ataques[0];
+        let indicador = Math.floor(Math.random() * 4) + 1;
+        if (indicador == 4) {
+            enemigo.vida -= ataque.daño * 1.5;
+            vidaMonstruo.innerText = `${enemigo.tipo} vida ${enemigo.vida}`;
+            vidaPj.innerText = `${seleccionPersonaje.tipo} vida ${seleccionPersonaje.vida}`;
+        } else {
+            enemigo.vida -= ataque.daño;
+            vidaMonstruo.innerText = `${enemigo.tipo} vida ${enemigo.vida}`;
+            vidaPj.innerText = `${seleccionPersonaje.tipo} vida ${seleccionPersonaje.vida}`;
+        }
+        esconderBotonAtaques();
+        document.getElementById('btnTurnoEnemigo').style.display = 'block';
     }
-    console.table(enemigo);
-    esconderBotonAtaques();
 }
 
 function ataque02() {
-    let ataque1 = seleccionPersonaje.ataques[1];
-    console.log(ataque1);
-    let indicador = Math.floor(Math.random() * 8) + 1;
-    console.log(indicador);
-    if (indicador == 8) {
-        console.log("Ataque crítico");
-        enemigo.vida -= ataque1.daño * 1.5;
+    if (seleccionPersonaje.vida <= 0) {
+        let divCajaTexto = document.getElementById('divTexto');
+        divCajaTexto.innerText = `Joven ${seleccionPersonaje.tipo} tu camino ha llegado al fin. Vuelve a comenzar con otro Pj para intentar recuperar la daga perdida. `;
     } else {
-        enemigo.vida -= ataque1.daño;
+        let ataque1 = seleccionPersonaje.ataques[1];
+        let indicador = Math.floor(Math.random() * 8) + 1;
+        if (indicador == 8) {
+            enemigo.vida -= ataque1.daño * 1.5;
+            vidaMonstruo.innerText = `${enemigo.tipo} vida ${enemigo.vida}`;
+            vidaPj.innerText = `${seleccionPersonaje.tipo} vida ${seleccionPersonaje.vida}`;
+        } else {
+            enemigo.vida -= ataque1.daño;
+            vidaMonstruo.innerText = `${enemigo.tipo} vida ${enemigo.vida}`;
+            vidaPj.innerText = `${seleccionPersonaje.tipo} vida ${seleccionPersonaje.vida}`;
+        }
+        esconderBotonAtaques();
+        document.getElementById('btnTurnoEnemigo').style.display = 'block';
     }
-    console.table(enemigo);
-    esconderBotonAtaques();
 }
 
 function ataque03() {
-    let ataque1 = seleccionPersonaje.ataques[2];
-    console.log(ataque1);
-    let indicador = Math.floor(Math.random() * 4) + 1;
-    console.log(indicador);
-    if (indicador == 4) {
-        console.log("Ataque crítico");
-        enemigo.vida -= ataque1.daño * 1.5;
+    if (seleccionPersonaje.vida <= 0) {
+        let divCajaTexto = document.getElementById('divTexto');
+        divCajaTexto.innerText = `Joven ${seleccionPersonaje.tipo} tu camino ha llegado al fin. Vuelve a comenzar con otro Pj para intentar recuperar la daga perdida. `;
     } else {
-        enemigo.vida -= ataque1.daño;
+        let ataque2 = seleccionPersonaje.ataques[2];
+        let indicador = Math.floor(Math.random() * 4) + 1;
+        if (indicador == 4) {
+            enemigo.vida -= ataque2.daño * 1.5;
+            vidaMonstruo.innerText = `${enemigo.tipo} vida ${enemigo.vida}`;
+            vidaPj.innerText = `${seleccionPersonaje.tipo} vida ${seleccionPersonaje.vida}`;
+        } else {
+            enemigo.vida -= ataque2.daño;
+            vidaMonstruo.innerText = `${enemigo.tipo} vida ${enemigo.vida}`;
+            vidaPj.innerText = `${seleccionPersonaje.tipo} vida ${seleccionPersonaje.vida}`;
+        }
+        esconderBotonAtaques();
+        document.getElementById('btnTurnoEnemigo').style.display = 'block';
     }
-    console.table(enemigo);
-    esconderBotonAtaques();
 }
-
 //=====================================================================================================
 //BOTONES
 const btnMago = document.getElementById('mago').addEventListener("click", selecMago);
