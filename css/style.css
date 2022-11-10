@@ -44,14 +44,25 @@
 
 #btnComenzar {
     display: none;
-    background-color: rgb(72, 72, 72);
-    border-radius: 8px;
+    background-color: rgb(155, 6, 6);
+    color: bisque;
+    border-radius: 10px;
+    border-color: black;
+    border-style: solid;
+    border: 4px;
+    padding: 5px;
+    margin: 1.5em;
 }
 
 .btnPj {
-    background-color:  rgb(72, 72, 72);
-    border-radius: 8px;
-    margin: 0.2em;
+    background-color: rgb(155, 6, 6);
+    color: bisque;
+    border-radius: 10px;
+    border-color: black;
+    border-style: solid;
+    border: 4px;
+    padding: 5px;
+    margin: 1.5em;
 }
 
 #btnPocima {
@@ -68,18 +79,26 @@
 
 #btnSeleccionarEnemigo {
     display: none;
-    background-color: rgb(72, 72, 72);
-    color: rgb(0, 0, 0);
+    background-color: rgb(155, 6, 6);
+    color: bisque;
     border-radius: 10px;
-    margin: 0.2em;
+    border-color: black;
+    border-style: solid;
+    border: 4px;
+    padding: 5px;
+    margin: 1.5em;
 }
 
 #btnTurnoEnemigo {
     display: none;
-    background-color: rgb(72, 72, 72);
-    color: rgb(0, 0, 0);
+    background-color: rgb(155, 6, 6);
+    color: bisque;
     border-radius: 10px;
-    margin: 0.2em;
+    border-color: black;
+    border-style: solid;
+    border: 4px;
+    padding: 5px;
+    margin: 1.5em;
 }
 
 .consola {
@@ -114,6 +133,8 @@
     text-align: center;
     text-shadow: 2px 0px 2px black;
     margin-top: 40px;
+    margin-left: 40px;
+    margin-right: 40px;
     display: flex;
     justify-content: center;
     align-items: center;
