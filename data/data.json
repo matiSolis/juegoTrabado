@@ -1,0 +1,22 @@
+[{
+    "tipo": "Mago",
+    "vida": 100,
+    "ataque1": 20,
+    "ataque2": 25,
+    "ataque3": 20
+},
+{
+    "tipo": "Guerrero",
+    "vida": 100,
+    "ataque1": 20,
+    "ataque2": 25,
+    "ataque3": 20
+},
+{
+    "tipo": "Arquera",
+    "vida": 100,
+    "ataque1": 20,
+    "ataque2": 25,
+    "ataque3": 20
+}
+]
