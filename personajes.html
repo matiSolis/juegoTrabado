@@ -1,0 +1,220 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description"
+        content="Mi primer juego como desarrollador. Es el resultado de mi primer experiencia escribiendo codigo Javascript">
+    <meta name="keywords" content="Juego, Rol, Turnos, Diversion, Game">
+    <link rel="stylesheet" href="./css/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <title>LA MONTAÑA MALDITA</title>
+</head>
+
+<body class="body">
+    <header class="header">
+        <nav class="navbar navbar-dark bg-dark fixed-top">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="./index.html">La Montaña Maldita</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas"
+                    data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="offcanvas offcanvas-end text-bg-dark" tabindex="-1" id="offcanvasDarkNavbar"
+                    aria-labelledby="offcanvasDarkNavbarLabel">
+                    <div class="offcanvas-header">
+                        <h5 class="offcanvas-title" id="offcanvasDarkNavbarLabel">Menu</h5>
+                        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"
+                            aria-label="Close"></button>
+                    </div>
+                    <div class="offcanvas-body">
+                        <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                            <li class="nav-item dropdown">
+                            <li class="nav-item">
+                                <a class="nav-link" href="#personajes">Personajes</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#monstruos">Monstruos</a>
+                            </li>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <section id="personajes">
+            <h1 class="titulo">PERSONAJES</h1>
+            <div class="cardsPersonajes">
+                <div class="card mb-3" style="max-width: 540px;">
+                    <div class="row g-0">
+                        <div class="col-md-4">
+                            <img src="https://thumbs.dreamstime.com/b/pixel-wizard-games-applications-97712251.jpg" class="img-fluid rounded-start" alt="mago">
+                        </div>
+                        <div class="col-md-8">
+                            <div class="card-body">
+                                <h5 class="card-title">MAGO</h5>
+                                <p class="card-text">El Mago fue entrenado por los descendientes de los antiguos magos.
+                                    Su sabiduria y poder vienen de un legado muy antiguo. Es muy intuitivo y analiza muy
+                                    bien las situacioens para tomar el menor riesgo y la mayor efectividad. Sus grandes
+                                    hechizos le pueden hacer fuerte a casi cualquier enemigo.
+                                    <p class="parrafito">
+                                        VIDA: 100<br>
+                                        PRIMER ATAQUE: Bola de fuego, DAÑO: 20<br>
+                                        SEGUNDO ATAQUE: Rayo, DAÑO: 25<br>
+                                        TERCER ATAQUE: Rayo de escarcha, DAÑO: 20<br>
+                                    </p>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card mb-3" style="max-width: 540px;">
+                    <div class="row g-0">
+                        <div class="col-md-4">
+                            <img src="./assets/muchacho-del-icono-del-arte-del-pixel-del-ejemplo-54756543.jpg" class="img-fluid rounded-start" alt="guerrero">
+                        </div>
+                        <div class="col-md-8">
+                            <div class="card-body">
+                                <h5 class="card-title">GUERRERO</h5>
+                                <p class="card-text">Los Guerreros son los mas fuertes del pueblo, son entrenados por grandes guerreros desde corta edad. A lo largo de su carrera militar se pueden especializar en diferentes armas. Nuestro guerrero es un experto con la espada de doble filo. Su pesada armadura los protegen de poderosos ataques. No le temen a la muerte y, por naturaleza, prefieren ser los primeros en ir en busca de enemigos.
+                                    <p class="parrafito">
+                                        VIDA: 100<br>
+                                        PRIMER ATAQUE: Filo resonante, DAÑO: 20<br>
+                                        SEGUNDO ATAQUE: Destierro, DAÑO: 25<br>
+                                        TERCER ATAQUE: Estallido de filos, DAÑO: 20<br>
+                                    </p>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card mb-3" style="max-width: 540px;">
+                    <div class="row g-0">
+                        <div class="col-md-4">
+                            <img src="http://pixelartmaker-data-78746291193.nyc3.digitaloceanspaces.com/image/5a439d4639fef15.png" class="img-fluid rounded-start" alt="arquera">
+                        </div>
+                        <div class="col-md-8">
+                            <div class="card-body">
+                                <h5 class="card-title">ARQUERA</h5>
+                                <p class="card-text">Las Arqueras son mujeres instruidas en el arte de la precision a distancia. Sigilosas y agiles como ningun otro. Pueden trepar rapidamente para tener una pocision de ventaja sobre el enemigo. Ellas mismas se adentran en el bosque oscuro para buscar una rama de la cual tallar su propio arco. Son indispensables para un ataque sorpresa.
+                                    <p class="parrafito">
+                                        VIDA: 100<br>
+                                        PRIMER ATAQUE: Flecha de cristal, DAÑO: 20<br>
+                                        SEGUNDO ATAQUE: Disparo de halcon, DAÑO: 25<br>
+                                        TERCER ATAQUE: Flecha de fuego, DAÑO: 20<br>
+                                    </p>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="monstruos">
+            <h1 class="subtitulo">MONSTRUOS</h1>
+            <div class="cardsMonstruos">
+                <div class="card mb-3" style="max-width: 540px;">
+                    <div class="row g-0">
+                        <div class="col-md-4">
+                            <img src="https://i.pinimg.com/originals/ab/cf/f0/abcff0c8d5c71c9d44ff54c7ae9ffedd.png" class="img-fluid rounded-start" alt="espiritu">
+                        </div>
+                        <div class="col-md-8">
+                            <div class="card-body">
+                                <h5 class="card-title">Espiritu</h5>
+                                <p class="card-text">Monstruo espectral. Son los primeros guardianes de la montaña. La
+                                    historia dice que son las personas que murieron en las excavaciones de las cuevas,
+                                    encargadas por los antiguos magos
+                                    son los enemigos mas debiles.
+                                    VIDA: 40<br>
+                                    DAÑO: 5<br>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card mb-3" style="max-width: 540px;">
+                    <div class="row g-0">
+                        <div class="col-md-4">
+                            <img src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/5226d799-97d5-47cb-b4cf-2e36bfea1c67/d93bg59-96c2e5fc-5b07-41ed-911f-6e4189e53f86.gif?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzUyMjZkNzk5LTk3ZDUtNDdjYi1iNGNmLTJlMzZiZmVhMWM2N1wvZDkzYmc1OS05NmMyZTVmYy01YjA3LTQxZWQtOTExZi02ZTQxODllNTNmODYuZ2lmIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.Qql2dnTwLE_XikEbme1l-NabDRJ7j8e7ly7QBuDhh6g" class="img-fluid rounded-start" alt="huargo">
+                        </div>
+                        <div class="col-md-8">
+                            <div class="card-body">
+                                <h5 class="card-title">Huargo</h5>
+                                <p class="card-text">Animania mas grande que un lobo. Los magos los tenian entrenados
+                                    para defenderlos y avisarles de enemigos cercanos. Pueden llegar a medir hasta 1.5mt
+                                    de altura. Los Huargos rara vez andan en solitario, pero cuando te encuentras a solo
+                                    uno su ferocidad aumenta.<br>
+                                    VIDA: 60<br>
+                                    DAÑO: 15<br>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card mb-3" style="max-width: 540px;">
+                    <div class="row g-0">
+                        <div class="col-md-4">
+                            <img src="https://cdnb.artstation.com/p/assets/images/images/024/269/999/large/lisa-groenenberg-orc-warrior-female.jpg?1581880211" class="img-fluid rounded-start" alt="orco">
+                        </div>
+                        <div class="col-md-8">
+                            <div class="card-body">
+                                <h5 class="card-title">Orco</h5>
+                                <p class="card-text">Los Orcos fueron capturados por los magos durante la gran batalla.
+                                    Los magos los hechizaron para utilizarlos a su favor. Algunos de ellos siguen
+                                    sueltos en las profundidades de la montaña.<br>
+                                    VIDA: 70<br>
+                                    DAÑO: 20<br>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card mb-3" style="max-width: 540px;">
+                    <div class="row g-0">
+                        <div class="col-md-4">
+                            <img src="https://i.pinimg.com/originals/01/1b/07/011b07047599ed94c4e60c8ae4fe1cb2.png" class="img-fluid rounded-start" alt="troll">
+                        </div>
+                        <div class="col-md-8">
+                            <div class="card-body">
+                                <h5 class="card-title">Troll</h5>
+                                <p class="card-text">Criaturas salvajes. Los Trolls entraron a la montaña en busca de
+                                    refugio. Son monstruos territoriales que defienden a sus pares. Pueden llegar a
+                                    medir hasta 3 metros de altura y son muy agresivos.<br>
+                                    VIDA: 80<br>
+                                    DAÑO: 25<br>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card mb-3" style="max-width: 540px;">
+                    <div class="row g-0">
+                        <div class="col-md-4">
+                            <img src="./assets/balrog.jpg" class="img-fluid rounded-start" alt="balrog">
+                        </div>
+                        <div class="col-md-8">
+                            <div class="card-body">
+                                <h5 class="card-title">Balrog</h5>
+                                <p class="card-text">Los Balrog son criaturas invocadas por los antiguos magos. Son los
+                                    protectores de la daga. Solo tienen un proposito en esta vida, proteger la daga
+                                    cueste lo que cueste. Son temibles monstruos de fuego de unos 12 metros de altura.
+                                    Se encuentran en lo mas profundo de la montaña y algunos pocos afortunados vuelven
+                                    para contar como son.<br>
+                                    VIDA: 90<br>
+                                    DAÑO: 30<br>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous">
+    </script>
+</body>

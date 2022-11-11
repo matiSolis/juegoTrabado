@@ -83,7 +83,7 @@ function selecEnemigo() {
     } else {
         Swal.fire({
             title: 'LA DAGA ES NUESTRA!',
-            text: 'Derrotas al ultimo enemigo y la daga se revela ante nosotros. Con ella lograremos controlar los dragones!. La victoria de nuestro pueblo es inminente. FELICITACIONES, ERES UN HEROE!',
+            text: 'Derrotas al ultimo enemigo y la daga se revela ante nosotros. Con ella lograremos controlar a los dragones!. La victoria de nuestro pueblo es inminente. FELICITACIONES, ERES UN HEROE!',
             imageUrl: './assets/dagaDragon.jpg',
             imageWidth: 200,
             imageHeight: 200,

@@ -101,6 +101,23 @@
     margin: 1.5em;
 }
 
+.cardsMonstruos{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: space-around;
+    margin: auto;
+}
+
+.cardsPersonajes {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: space-around;
+    margin: auto;
+    margin-top: 100px;
+}
+
 .consola {
     border-radius: 190px;
     margin: auto;
@@ -140,7 +157,9 @@
     align-items: center;
     color: aliceblue;
 }
-
+.header{
+    margin-bottom: 50px;
+}
 .img1 {
     margin: auto;
     max-height: 15em;
@@ -153,7 +172,8 @@
 }
 
 .lifePj {
-    padding: 5px;;
+    padding: 5px;
+    ;
     border: 1px;
     border-radius: 8px;
     background-color: rgb(155, 6, 6);
@@ -163,7 +183,8 @@
 }
 
 .lifeMonster {
-    padding: 5px;;
+    padding: 5px;
+    ;
     border: 1px;
     border-radius: 8px;
     background-color: rgb(155, 6, 6);
@@ -176,13 +197,32 @@
     color: antiquewhite;
     font-size: larger;
 }
-
+.parrafito{
+    display: flex;
+    flex-direction: column;
+}
 #personajes {
     display: flex;
     margin: 1em;
 }
 
-.btn{
+.subtitulo{
+    display: flex;
+    margin-top: 50px;
+    margin-left: 25px;
+    color: aliceblue;
+    text-shadow: 2px 0px 2px black;
+}
+
+.titulo{
+    display: flex;
+    margin-top: 50px;
+    margin-left: 25px;
+    color: aliceblue;
+    text-shadow: 2px 0px 2px black;
+}
+
+.btn {
     border-color: black;
     border: 4px;
 }
