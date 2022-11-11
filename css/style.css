@@ -7,6 +7,11 @@
 
 }
 
+.btn {
+    border-color: black;
+    border: 4px;
+}
+
 #btnAtaque1 {
     display: none;
     margin-right: 4px;
@@ -101,7 +106,7 @@
     margin: 1.5em;
 }
 
-.cardsMonstruos{
+.cardsMonstruos {
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
@@ -157,9 +162,11 @@
     align-items: center;
     color: aliceblue;
 }
-.header{
+
+.header {
     margin-bottom: 50px;
 }
+
 .img1 {
     margin: auto;
     max-height: 15em;
@@ -197,16 +204,18 @@
     color: antiquewhite;
     font-size: larger;
 }
-.parrafito{
+
+.parrafito {
     display: flex;
     flex-direction: column;
 }
+
 #personajes {
     display: flex;
     margin: 1em;
 }
 
-.subtitulo{
+.subtitulo {
     display: flex;
     margin-top: 50px;
     margin-left: 25px;
@@ -214,15 +223,10 @@
     text-shadow: 2px 0px 2px black;
 }
 
-.titulo{
+.titulo {
     display: flex;
     margin-top: 50px;
     margin-left: 25px;
     color: aliceblue;
     text-shadow: 2px 0px 2px black;
-}
-
-.btn {
-    border-color: black;
-    border: 4px;
 }

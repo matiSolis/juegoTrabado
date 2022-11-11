@@ -6,16 +6,15 @@ class Monstruos {
         this.daño = daño;
     }
 }
+// Iba a hacer los monstruos tb con fetch, pero lso deje asi para utilizar constructores
 
 //=====================================================================================================
 //MONSTRUO
-
 const espiritu = new Monstruos("Espiritu", 40, 5);
 const huargo = new Monstruos("Huargo", 60, 15);
 const orco = new Monstruos("Orco", 70, 20);
 const troll = new Monstruos("Troll", 80, 25);
 const balrog = new Monstruos("Balrog", 90, 30);
-
 
 const monstruosArray = [espiritu, huargo, orco, troll, balrog];
 
